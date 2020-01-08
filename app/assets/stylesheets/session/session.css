@@ -6,6 +6,7 @@
     align-items: center;
     margin: 0px;
     
+    
 }
 
 .demo{
@@ -44,13 +45,26 @@
 .multibtn{
     margin-top: 10px;
     border-radius: 3px;
+    font-weight: normal;
+    color: white;
+    background-color: #0095ff;
+    width: 220px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
 
+}
+
+.multibtn:hover {
+  background-color: RoyalBlue;
 }
 
 .greeting{
     font-family: sans-serif;
     text-align: center;
-    font-size: larger;
+    font-size: x-large;
+    color: black;
+    font-weight: bold;
 }
 
 .background{
@@ -59,6 +73,7 @@
     height: 100vh;
     margin: 0;
     padding-top: 30px;
+    background-image: url(/assets/image3.jpg);
 
 }
 
@@ -75,6 +90,7 @@
 .input{
     width: 220px;
     height: 30px;
-    border-radius: 3px;
+    border-radius: 5px;
+    margin-top: 3px;
 }
 

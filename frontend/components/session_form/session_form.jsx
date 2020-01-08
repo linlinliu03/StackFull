@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
@@ -37,7 +38,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const display = this.props.formType === "signup" ? (
+        const display = this.props.formType === "sign up" ? (
             <div className="label">
                 <label htmlFor="email">Email:</label>
                 <div>
@@ -89,7 +90,6 @@ class SessionForm extends React.Component {
 
                             </div>
                         </form>
-
                     </div>
                 </div>
         </div>
