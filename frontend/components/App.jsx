@@ -13,7 +13,7 @@ import SignupFormContainer from "../components/session_form/signup_form_containe
 import CreateQuestionContainer from "../components/question/create_question_container";
 import QuestionsContainer from "../components/question/questions_container";
 import Home from "../components/home/home";
-import { AuthRoute, ProtectedRoute, CustomizedRoute } from "../util/route_util";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
   <div>
@@ -22,7 +22,7 @@ const App = () => (
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <CustomizedRoute exact path="/questions" component={QuestionsContainer} />
+        <ProtectedRoute exact path="/questions" component={QuestionsContainer} />
         <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} />
         <AuthRoute exact path="/" component={Home} />
       </Switch>

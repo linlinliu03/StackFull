@@ -14,8 +14,8 @@ class Greeting extends React.Component {
     }
 
     signOut() {
-        this.props.logout();
-        this.routeChange("/");
+        
+        this.props.logout().then(() => this.routeChange("/"));
     }
     
     render() {
@@ -38,7 +38,7 @@ class Greeting extends React.Component {
 
         return (
             <div className="header">
-                <div className="homediv"><button className="home" onClick={() => this.routeChange("/")}><i className="fa fa-home"></i>Stack Full</button></div>
+                <div className="homediv"><button className="home" onClick={() => this.routeChange("/")}>Stack Full</button></div>
                 <div className="searchbar">
                   <span className="glyphicon glyphicon-search"></span>
                   <input type="text" placeholder="Search..." className="search"/>
