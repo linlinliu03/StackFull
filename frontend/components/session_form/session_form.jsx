@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
     render() {
         const display = this.props.formType === "signup" ? (
             <div className="label">
-                <label className="labelname" htmlFor="email">Email:</label>
+                <label htmlFor="email">Email:</label>
                 <div>
                     <input
                         id="email"
@@ -62,7 +62,7 @@ class SessionForm extends React.Component {
                         <form className="form" onSubmit={this.handleSubmit}>
                             {this.renderErrors()}
                             <div className="label">
-                                <label className="labelname" htmlFor="username">Username:</label>
+                                <label htmlFor="username">Username:</label>
                                 <div>
                                     <input
                                         id="username"
@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
                             </div>
                             {display}
                             <div className="label">
-                                <label className="labelname" htmlFor="password">Password:</label>
+                                <label htmlFor="password">Password:</label>
                                 <div>
                                     <input
                                         id="password"
