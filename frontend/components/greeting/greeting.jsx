@@ -1,27 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const Greeting = ({ currentUser, logout }) => {
-    const display = currentUser ? (
-        <div>
-            <h2>Hello, {currentUser.username}!</h2>
-            <Link to="/questions/new">Ask Question</Link>
-            <button onClick={logout}>Log Out</button>
-        </div>
-    ) : (
-            <div>
-                <Link to="/signup">Sign Up</Link>
-                <Link to="/login">Log In</Link>
+class Greeting extends React.Component {
+    constuctor() {
+        this.routeChange = this.routeChange.bind(this);
+    }
+
+    routeChange(path) {
+        this.props.resetError();
+        this.props.history.push(path);
+    }
+    render() {
+        const { currentUser, logout } = this.props;
+        const display = currentUser ? (
+            <div className="rightbar">
+                <p className="username">Hello, {currentUser.username}!</p>
+                <button className="hov askquestion" onClick={() => this.routeChange("/questions/new")}>Ask Question</button>
+                <button className="hove logout" onClick={logout}>Log Out</button>
             </div>
-        );
+        ) : (
+                <div className="rightbar">
+                    <button className="hove login" onClick={() => this.routeChange("/login")}>Login</button>
+                    <button className="hov signup" onClick={() => this.routeChange("/signup")}>Sign Up</button>
+                </div>
+            );
+        
 
-    return (
-        <div>
-            <Link to="/">Home</Link>
-            {display}
-        </div>
-    )
+
+        return (
+            <div className="header">
+                <div className="homediv"><button className="home" onClick={() => this.routeChange("home")}><i className="fa fa-home"></i>Stack Full</button></div>
+                <div className="searchbar">
+                  <span className="glyphicon glyphicon-search"></span>
+                  <input type="text" placeholder="Search.." className="search"/>
+                </div>
+                {display}
+            </div>
+        )
+    }
 
 }
 
-export default Greeting;
+
+export default withRouter(Greeting);

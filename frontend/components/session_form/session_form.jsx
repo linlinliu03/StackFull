@@ -5,6 +5,7 @@ class SessionForm extends React.Component {
         super(props);
         this.state = this.props.user;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoSubmit = this.demoSubmit.bind(this);
     }
 
     update(field) {
@@ -16,6 +17,13 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
+
+    demoSubmit(e) {
+        e.preventDefault();
+        const user = { username: "Lily", password:1234567};
+        this.props.login(user);
+    }
+
     renderErrors() {
         return (
             <ul>
@@ -30,38 +38,63 @@ class SessionForm extends React.Component {
 
     render() {
         const display = this.props.formType === "signup" ? (
-            <label>Email:
+            <div className="label">
+                <label className="labelname" htmlFor="email">Email:</label>
+                <div>
                     <input
-                    type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                />
-            </label>
-        ) : (
-                <label></label>
-            )
-        return (<div>
-            <form onSubmit={this.handleSubmit}>
-                <h2>Please {this.props.formType}</h2>
-                {this.renderErrors()}
-                <label>Username:
-                    <input
+                        id="email"
+                        className="input"
                         type="text"
-                        value={this.state.username}
-                        onChange={this.update('username')}
+                        value={this.state.email}
+                        onChange={this.update('email')}
                     />
-                </label>
-                {display}
-                <label>Password:
-                    <input
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.update('password')}
-                    />
-                    <button onClick={this.handleSubmit}>{this.props.formType}</button>
-                </label>
-            </form>
-        </div>)
+                </div>   
+            </div>
+        ) : (
+            <label></label>
+            )
+        return (
+        <div className="background">
+                <div className="sessionparent">
+                    <div className="greeting">{this.props.formMessage}</div>
+                    <button className="demo" onClick={this.demoSubmit}>Demo User</button>
+                    <div className="formContainer">
+                        <form className="form" onSubmit={this.handleSubmit}>
+                            {this.renderErrors()}
+                            <div className="label">
+                                <label className="labelname" htmlFor="username">Username:</label>
+                                <div>
+                                    <input
+                                        id="username"
+                                        className = "input"
+                                        type="text"
+                                        value={this.state.username}
+                                        onChange={this.update('username')}
+                                    />
+                                </div>
+                            </div>
+                            {display}
+                            <div className="label">
+                                <label className="labelname" htmlFor="password">Password:</label>
+                                <div>
+                                    <input
+                                        id="password"
+                                        className="input"
+                                        type="password"
+                                        value={this.state.password}
+                                        onChange={this.update('password')}
+                                    />
+                                </div>
+                                <button className="multibtn" onClick={this.handleSubmit}>{this.props.formType}</button>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+        </div>
+        
+        )
     }
 }
 

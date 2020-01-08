@@ -11,11 +11,13 @@ const mapStateToProps = (state, ownProps) => ({
     },
     errors: state.errors.session,
     formType: 'login',
+    formMessage: 'Welcome Back!',
     link: <Link to='/signup'>Sign UP Instead</Link>
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    processForm: (user) => dispatch(login(user))
+    processForm: (user) => dispatch(login(user)),
+    login: (user) => dispatch(login(user))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(sessionForm);

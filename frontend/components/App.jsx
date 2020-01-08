@@ -17,13 +17,11 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 const App = () => (
   <div>
     <header>
-      <h1>Welcome Stack Full</h1>
       <GreetingContainer />
       <Switch>
-          <AuthRoute exact path="/login" component={LoginFormContainer} />
-          <AuthRoute exact path="/signup" component={SignupFormContainer} />
-          <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} />
-          
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        
       </Switch>
     </header>
   </div>
