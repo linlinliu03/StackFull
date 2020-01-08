@@ -5,7 +5,7 @@ class Greeting extends React.Component {
     constructor() {
         super();
         this.routeChange = this.routeChange.bind(this);
-        // this.signOut = this.signOut.bind(this);
+        this.signOut = this.signOut.bind(this);
     }
 
     routeChange(path) {
@@ -13,10 +13,10 @@ class Greeting extends React.Component {
         this.props.history.push(path);
     }
 
-    // signOut() {
-    //     this.props.logout();
-    //     this.routeChange("/");
-    // }
+    signOut() {
+        this.props.logout();
+        this.routeChange("/");
+    }
     
     render() {
         const { currentUser, logout} = this.props;
@@ -24,12 +24,13 @@ class Greeting extends React.Component {
             <div className="rightbar">
                 <p className="username">Hello, {currentUser.username}!</p>
                 <button className="hov askquestion" onClick={() => this.routeChange("/questions/new")}>Ask Question</button>
-                <button className="hove logout" onClick={logout}>Log Out</button>
+                <button className="hove logout" onClick={this.signOut}>Log Out</button>
             </div>
         ) : (
                 <div className="rightbar">
+                    <button className="hov askquestion" onClick={() => this.routeChange("/questions/new")}>Ask Question</button>
                     <button className="hove login" onClick={() => this.routeChange("/login")}>Login</button>
-                    <button className="hov signup" onClick={() => this.routeChange("/signup")}>Sign Up</button>
+                    <button className="hove signup" onClick={() => this.routeChange("/signup")}>Sign Up</button>
                 </div>
             );
         
