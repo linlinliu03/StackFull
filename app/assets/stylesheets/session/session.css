@@ -2,7 +2,6 @@
     display: flex;
     flex-direction:column;
     justify-content: space-between;
-    /* flex-wrap:wrap; */
     align-items: center;
     margin: 0px;
     
@@ -25,7 +24,6 @@
 .form{
     display: flex;
     flex-direction:column; 
-    margin-top: 20px;
 }
 
 .formdiv{
@@ -92,5 +90,10 @@
     height: 30px;
     border-radius: 5px;
     margin-top: 3px;
+}
+
+.error-list{
+    color: red;
+    list-style: circle;
 }
 

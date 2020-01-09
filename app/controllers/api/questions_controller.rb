@@ -1,6 +1,7 @@
 class Api::QuestionsController < ApplicationController
-    def index(query = '')
-        condition = '%' + query.downcase + '%'
+    def index
+        query = params[:query] || ''
+        condition = '%' + query + '%'
         @questions = Question.where('questions.title like ?', condition)
         render :index 
     end 

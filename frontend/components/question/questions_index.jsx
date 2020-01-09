@@ -7,7 +7,7 @@ class QuestionsIndex extends React.Component {
 
     render(){
         return(
-            <p>Questions Coming Soon!</p>
+                <p className="hometest">Questions Coming Soon!</p>
         )
     }
 }

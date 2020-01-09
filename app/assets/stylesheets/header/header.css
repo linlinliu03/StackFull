@@ -3,8 +3,7 @@
 .header{
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    border-top: 4px solid  red;
+    border-top: 3px solid #f48024;
     border-bottom: 1px solid lightgray;
     padding: 10px;
     height: 70px;
@@ -20,18 +19,30 @@
 
 
 .homediv{
-    flex-grow: 1;
+    cursor: pointer;
+    flex-grow: 2;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
 }
 
-.home{
-    cursor: pointer;
+.stackimage{
+    background-image: url("https://cdn.sstatic.net/Img/unified/sprites.svg?v=e5e58ae7df45");
+    display: inline-block;
+    text-indent: -9999em;
+    height: 30px;
+    width: 73px;
+    margin-top: 5px;
+    margin-left: 0;
+    background-position: 0 -500px;
+}
+
+.text{
+    padding-top: 13.5px;
     font-weight: bold;
-    color: orange;
-    font-size: x-large;
-    border-color: transparent;
-    font-family: cursive;
+    margin-left: 5px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    display: inline-block;
+    font-size: large;
 }
 
 .searchbar{
@@ -53,12 +64,12 @@
     flex-grow: 1;
     color:gray;
 }
-
+/* 
 .username{
     font-size: large;
     font-family: sans-serif;
     color:  rgb(56, 84, 153);
-}
+} */
 
 .askquestion{
     border-radius: 3px;
@@ -68,14 +79,6 @@
     font-family: sans-serif;
     border: none;
     font-size: 0.8rem;
-    padding: 5px;
-}
-
-.logout{
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: x-small;
-    font-family: sans-serif;
     padding: 5px;
 }
 
@@ -109,7 +112,7 @@
 
 .searchbar .glyphicon { 
   position: absolute;
-  top: 7px;
+  top: 14px;
   left: 7px;
   font-size: 18px;
 }
@@ -124,4 +127,33 @@
 
 .fa{
     margin-right: 3px;
+}
+
+/* .user{
+    font-size: xx-large;
+    cursor: pointer;
+} */
+
+.logout{
+    font-size: xx-large;
+}
+
+.avatar-circle {
+  width: 35px;
+  height: 35px;
+  background-color: lightsalmon;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+
+.initials {
+    position: relative;
+    top: -5px;
+    font-size: 20px;
+    line-height: 50px;
+    color: #fff;
+    font-family: "Courier New", monospace;
+    font-weight: bold;
 }

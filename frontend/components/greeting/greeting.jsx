@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 class Greeting extends React.Component {
     constructor() {
@@ -22,9 +26,11 @@ class Greeting extends React.Component {
         const { currentUser, logout} = this.props;
         const display = currentUser ? (
             <div className="rightbar">
-                <p className="username">Hello, {currentUser.username}!</p>
+                <div className="hove avatar-circle" onClick={() => this.routeChange(`/users/${currentUser.id}`)}>
+                    <span className="initials">{currentUser.username.charAt(0).toUpperCase()}</span>
+                </div>
                 <button className="hov askquestion" onClick={() => this.routeChange("/questions/new")}>Ask Question</button>
-                <button className="hove logout" onClick={this.signOut}>Log Out</button>
+                < FontAwesomeIcon icon={faSignOutAlt} className="hove logout" onClick={this.signOut} />
             </div>
         ) : (
                 <div className="rightbar">
@@ -38,7 +44,7 @@ class Greeting extends React.Component {
 
         return (
             <div className="header">
-                <div className="homediv"><button className="home" onClick={() => this.routeChange("/")}>Stack Full</button></div>
+                <div className="hove homediv" onClick={() => this.routeChange("/")}><div className="stackimage"></div><div className="text">Full</div></div>
                 <div className="searchbar">
                   <span className="glyphicon glyphicon-search"></span>
                   <input type="text" placeholder="Search..." className="search"/>

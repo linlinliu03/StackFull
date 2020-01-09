@@ -13,6 +13,7 @@ class SessionForm extends React.Component {
         return e => this.setState({ [field]: e.target.value })
     }
 
+
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
@@ -29,7 +30,7 @@ class SessionForm extends React.Component {
         return (
             <ul>
                 {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} className="error-list">
                         {error}
                     </li>
                 ))}
@@ -61,7 +62,6 @@ class SessionForm extends React.Component {
                     <button className="demo" onClick={this.demoSubmit}>Demo User</button>
                     <div className="formContainer">
                         <form className="form" onSubmit={this.handleSubmit}>
-                            {this.renderErrors()}
                             <div className="label">
                                 <label htmlFor="username">Username:</label>
                                 <div>
@@ -89,6 +89,7 @@ class SessionForm extends React.Component {
                                 <button className="multibtn" onClick={this.handleSubmit}>{this.props.formType}</button>
 
                             </div>
+                            {this.renderErrors()}
                         </form>
                     </div>
                 </div>

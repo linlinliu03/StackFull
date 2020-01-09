@@ -12,6 +12,7 @@ import LoginFormContainer from "../components/session_form/login_form_container"
 import SignupFormContainer from "../components/session_form/signup_form_container";
 import CreateQuestionContainer from "../components/question/create_question_container";
 import QuestionsContainer from "../components/question/questions_container";
+import UserContainer from "../components/user/user_container";
 import Home from "../components/home/home";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -24,6 +25,7 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/questions" component={QuestionsContainer} />
         <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} />
+        <Route exact path="/users/:userId" component={UserContainer} />
         <AuthRoute exact path="/" component={Home} />
       </Switch>
     </header>
