@@ -56,8 +56,7 @@ class SessionForm extends React.Component {
             <label></label>
             )
         return (
-        <div>
-                <img src={window.image3} />
+        <div className="background">
                 <div className="sessionparent">
                     <div className="greeting">{this.props.formMessage}</div>
                     <button className="demo" onClick={this.demoSubmit}>Demo User</button>

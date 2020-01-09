@@ -71,7 +71,7 @@
     height: 100vh;
     margin: 0;
     padding-top: 30px;
-    background-image: url(/assets/image3.jpg);
+    background-image: url('/assets/image3.jpg');
 
 }
 
