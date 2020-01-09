@@ -11,7 +11,10 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-
+  <script type="text/javascript">
+    window.image3 = "<%= image_url('image3.jpg') %>";
+  </script>
+  
   <body>
     <%= yield %>
   </body>

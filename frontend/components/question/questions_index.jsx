@@ -1,13 +1,25 @@
 import React from 'react';
 
+
 class QuestionsIndex extends React.Component {
-    constuctor() {
-        
+    componentDidMount() {
+        this.props.fetchQuestions();
     }
 
-    render(){
-        return(
-                <p className="hometest">Questions Coming Soon!</p>
+    render() {
+        const { questions } = this.props;
+        const recentQuestions = questions.length > 20 ? questions.slice(questions.length - 20) : questions
+        return (
+            <div>
+                <div>Most Recent Questions</div>
+                <ul>
+                    {
+                        recentQuestions.map(question => (
+                            <li key={question.id}>{question.title}</li>
+                        ))
+                    }
+                </ul>
+            </div>
         )
     }
 }

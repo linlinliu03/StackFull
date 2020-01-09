@@ -6,8 +6,8 @@ import {fetchQuestions,
         fetchQuestion, 
         createQuestion, 
         updateQuestion, 
-        removeQuestion}
-from "./util/question_api_util";
+        deleteQuestion}
+from "./actions/question_actions";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,12 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
     //test 
+    window.dispatch = store.dispatch
     window.getState = store.getState
     window.fetchQuestions = fetchQuestions
     window.fetchQuestion = fetchQuestion
     window.createQuestion = createQuestion
     window.updateQuestion = updateQuestion
-    window.removeQuestion = removeQuestion
+    window.deleteQuestion = deleteQuestion
     //test end 
     const root = document.getElementById("root");
     ReactDOM.render(<Root store = {store} />, root);
