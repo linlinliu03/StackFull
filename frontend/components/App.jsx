@@ -13,6 +13,8 @@ import SignupFormContainer from "../components/session_form/signup_form_containe
 import CreateQuestionContainer from "../components/question/create_question_container";
 import QuestionsContainer from "../components/question/questions_container";
 import UserContainer from "../components/user/user_container";
+import QuestionShowContainer from "../components/question/question_show_container";
+import QuestionSearchContainer from "../components/question/question_search_container"
 import Home from "../components/home/home";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -26,6 +28,8 @@ const App = () => (
         <ProtectedRoute exact path="/questions" component={QuestionsContainer} />
         <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} />
         <Route exact path="/users/:userId" component={UserContainer} />
+        <Route exact path="/search/:query" component={QuestionSearchContainer} />
+        <Route exact path="/questions/:questionId" component={QuestionShowContainer} />
         <AuthRoute exact path="/" component={Home} />
       </Switch>
     </header>
