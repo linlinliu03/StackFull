@@ -10,17 +10,17 @@ ActiveRecord::Base.transaction do
 
 User.destroy_all
 Question.destroy_all
-  # 100.times do 
-  #   name = Faker::Name.unique.name
-  #   email = Faker::Internet.unique.email
-  #   password = Faker::Internet.password(min_length: 6)
-  #   User.create!({username:name, email:email, password: password})
-  # end 
+  100.times do 
+    name = Faker::Name.unique.name
+    email = Faker::Internet.unique.email
+    password = Faker::Internet.password(min_length: 6)
+    User.create!({username:name, email:email, password: password})
+  end 
 
-  Jen = User.create!({username:"Jen", email:"jen@gamil.com", password: 123456789})
-  Pan = User.create!({username:"Pan", email:"pan@gamil.com", password: 1234567890})
+  # Jen = User.create!({username:"Jen", email:"jen@gamil.com", password: 123456789})
+  # Pan = User.create!({username:"Pan", email:"pan@gamil.com", password: 1234567890})
   Lily = User.create!({username:"Lily", email:"lily@gamil.com", password: 1234567})
-  Tom = User.create!({username:"Tom", email:"tom@gmail.com", password: 12345678900})
+  # Tom = User.create!({username:"Tom", email:"tom@gmail.com", password: 12345678900})
 
   ids = User.ids
 
