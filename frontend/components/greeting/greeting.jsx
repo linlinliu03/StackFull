@@ -6,13 +6,23 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 class Greeting extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            word: ''
+    constructor(props) {
+        super(props);
+        const res = this.props.location.pathname.match("/search/(.*)")
+        if (res) {
+            const query = res[1]
+            this.state = {
+                word: query
+            }
+            this.startSearch(query)
+        } else {
+            this.state = {
+                word: ''
+            }
         }
         this.routeChange = this.routeChange.bind(this);
         this.signOut = this.signOut.bind(this);
+        this.startSearch = this.startSearch.bind(this);
     }
 
     routeChange(path) {
@@ -30,11 +40,14 @@ class Greeting extends React.Component {
         return e => this.setState({ word: e.target.value })
     }
 
-    startSearch(){
+    startSearch(query) {
+        this.props.fetchQuestions(query);
+        return this.props.history.push(`/search/${query}`)
+    }
+    searchFunc(){
         return e => {
             if (e.key === 'Enter') {
-                this.props.fetchQuestions(e.target.value);
-                return this.props.history.push(`/search/${e.target.value}`)
+                this.startSearch(e.target.value)
             }
         }
     }
@@ -68,7 +81,7 @@ class Greeting extends React.Component {
                       className="search"
                       value={this.state.word}
                       onChange={this.update()}
-                      onKeyPress={this.startSearch()}
+                      onKeyPress={this.searchFunc()}
                       />
                 </div>
                 {display}

@@ -22,18 +22,20 @@ class QuestionsIndex extends React.Component {
             <div className="question-frame">
                 <div className="question-section">
                     <div className="questions-top">Top Questions</div>
-                    <ul className="question-container">
+                    <ul>
                         {
-                            recentQuestions.map(question => (
+                            recentQuestions.reverse().map(question => (
                                 <li key={question.id} 
-                                    className="question-list"
+                                    className="question-index-list"
                                     onClick={() => this.routeChange(`/questions/${question.id}`)}
                                     >
-                                    <div className="answer-count">
-                                        <div className="number">{question.answerIds.length}</div>
-                                        <div className="answer-body">answers</div>
+                                    <div className="question-list">
+                                           <div className="answer-count">
+                                               <div className="number">{question.answerIds.length}</div>
+                                               <div className="answer-body">answers</div>
+                                           </div>
+                                           <div className="question-title">{question.title}</div>
                                     </div>
-                                    <div className="question-title">{question.title}</div>
                                 </li>
                             ))
                         }

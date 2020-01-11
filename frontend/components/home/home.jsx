@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Home = () => (
-    <p>Home Page Coming Soon!</p>
+    <div><img src={window.homepage} className="homeimage"/></div>
 )
 
 export default Home;
+
