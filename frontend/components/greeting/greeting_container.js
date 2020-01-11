@@ -1,5 +1,6 @@
 import Greeting from './greeting';
 import { logout, clearErrors } from '../../actions/session_actions';
+import {fetchQuestions} from '../../actions/question_actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
@@ -8,7 +9,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
-    resetError: () => dispatch(clearErrors())
+    resetError: () => dispatch(clearErrors()),
+    fetchQuestions: (query) => dispatch(fetchQuestions(query))
 })
 
 

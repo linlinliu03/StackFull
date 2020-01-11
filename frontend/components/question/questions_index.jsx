@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 
 
 class QuestionsIndex extends React.Component {
@@ -30,7 +29,11 @@ class QuestionsIndex extends React.Component {
                                     className="question-list"
                                     onClick={() => this.routeChange(`/questions/${question.id}`)}
                                     >
-                                    {question.title}
+                                    <div className="answer-count">
+                                        <div className="number">{question.answerIds.length}</div>
+                                        <div className="answer-body">answers</div>
+                                    </div>
+                                    <div className="question-title">{question.title}</div>
                                 </li>
                             ))
                         }
@@ -42,4 +45,4 @@ class QuestionsIndex extends React.Component {
     }
 }
 
-export default withRouter(QuestionsIndex);
+export default QuestionsIndex;

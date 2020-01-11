@@ -10,14 +10,12 @@
 }
 
 .question-list{
-    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-    color: #0064bd;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 20px;
-    font-weight: 400;
-    cursor: pointer;
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .question-container{
@@ -49,6 +47,36 @@
     padding: 10px;
     margin-top: 30px;
     margin-left: 30px;
+}
+
+.question-title{
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    color: #0064bd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.answer-count{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.number{
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 1.26666667;
+    color: #6a737c;
+}
+
+.answer-body{
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 1.26666667;
+    color: #848d95;
 }
 
 

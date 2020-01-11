@@ -20,7 +20,6 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
   <div>
-    <header>
       <GreetingContainer />
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
@@ -28,11 +27,11 @@ const App = () => (
         <ProtectedRoute exact path="/questions" component={QuestionsContainer} />
         <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} />
         <Route exact path="/users/:userId" component={UserContainer} />
-        <Route exact path="/search/:query" component={QuestionSearchContainer} />
+        <Route path="/search/:query" component={QuestionSearchContainer}  />
+        <Route path="/search/" component={QuestionSearchContainer} />
         <Route exact path="/questions/:questionId" component={QuestionShowContainer} />
         <AuthRoute exact path="/" component={Home} />
       </Switch>
-    </header>
   </div>
 );
 

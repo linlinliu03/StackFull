@@ -1,12 +1,13 @@
 class Api::QuestionsController < ApplicationController
     def index
         query = params[:query] || ''
-        condition = '%' + query + '%'
-        @questions = Question.where('questions.title like ?', condition)
+        condition = '%' + query.downcase + '%'
+        @questions = Question.includes(:answers).where('questions.title like ?', condition)
         render :index 
     end 
 
     def show 
+        @question = Question.includes(:answers).find(params[:id])
         @question = Question.find(params[:id])
         render :show 
     end 
