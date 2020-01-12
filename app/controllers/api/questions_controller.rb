@@ -1,8 +1,9 @@
 class Api::QuestionsController < ApplicationController
     def index
         query = params[:query] || ''
-        condition = '%' + query.downcase + '%'
-        @questions = Question.includes(:answers).where('questions.title like ?', condition)
+        condition = '%' + query + '%'
+        @questions = Question.includes(:answers).where('LOWER(questions.title) like LOWER(?) or
+        LOWER(questions.body) like LOWER(?)', condition, condition)
         render :index 
     end 
 

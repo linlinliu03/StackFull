@@ -1,3 +1,154 @@
 .homeimage{
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
     width: 100%;
+}
+
+.img-container{
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.for-developers{
+    font-family: 'Roboto Slab Bold',serif;
+    font-weight: 700;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 24px;
+    color:black;
+}
+
+.divider{
+    margin: 0 auto;
+    background: #f2720c;
+    display: block;
+    width: 80px;
+    height: 6px;
+    margin-bottom: 24px;
+}
+
+.developer-text{
+    font-family: 'Source Sans Pro',sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    clear: both;
+    margin: 0px 158px 48px 158px;
+    text-align: center;
+    padding: 0 58px 0 58px;
+}
+
+.purple-container{
+    margin-bottom: -4vw;
+    margin-top: -4vw;
+    -webkit-clip-path: polygon(0 0, 100% 4vw, 100% calc(100% - 4vw), 0 100%);
+    clip-path: polygon(0 0, 100% 4vw, 100% calc(100% - 4vw), 0 100%);
+    background-color: #2b2d6e;
+    padding-top: 128px;
+    padding-bottom: 128px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.unlock-text{
+    font-family: 'Roboto Slab Bold',serif;
+    font-weight: 700;
+    color:  #fff;
+    font-size: 34px;
+    margin: 0px 158px 24px 158px;
+    text-align: center;
+}
+
+.for-developers-container{
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.our-missiton-text{
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 17px;
+    color: #fff;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 24px;
+    padding: 0 58px 0 58px;
+}
+
+.home-middle{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.home-middle-element1{
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.home-middle-element2{
+    margin-bottom: 16px;
+    font-family: 'Roboto Slab Bold',serif;
+    font-weight: 700;
+    font-size: 19px;
+    color: black;
+}
+
+.home-middle-element3{
+    font-family: 'Source Sans Pro',sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    color: #242729;
+}
+
+.home-middle-element{
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.questions-are{
+    font-family: 'Roboto Slab Bold',serif;
+    font-weight: 700;
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 24px;
+    color:black;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.we-build{
+    font-family: 'Source Sans Pro',sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    clear: both;
+    margin: 0px 158px 24px 158px;
+    text-align: center;
+    padding: 0 58px 0 58px;
+}
+
+.home-bottom-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.create-account-button{
+    text-align: center;
+    display: inline-block;
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 15px;
+    background-color: #f48024;
+    border-radius: 3px;
+    border: none;
+    font-size: 1.5384615em;
+    padding: 12px 24px;
+    font-size: smaller;
+    color: #fff;
 }

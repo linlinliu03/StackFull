@@ -11,9 +11,11 @@ const mapStateToProps = (state, ownProps) => ({
         password: ""
     },
     errors: state.errors.session,
-    formType: 'sign up',
+    formType: 'Sign up',
     formMessage: 'Create your Stack Full account. It’s free and only takes a minute.',
-    link: <Link to='/signin'>Sign In Instead</Link>
+    change: 'Already have an account?',
+    redirect: 'Log in',
+    Link: '/login'
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

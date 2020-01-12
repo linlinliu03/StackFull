@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterSection from '../footer/footer';
 
 
 class QuestionsIndex extends React.Component {
@@ -17,9 +18,11 @@ class QuestionsIndex extends React.Component {
 
     render() {
         const { questions } = this.props;
-        const recentQuestions = questions.length > 20 ? questions.slice(questions.length - 20) : questions
+        const recentQuestions = questions.length > 20 ? 
+              questions.slice(questions.length - 20) : questions
         return (
-            <div className="question-frame">
+            <div>
+             <div className="question-frame">
                 <div className="question-section">
                     <div className="questions-top">Top Questions</div>
                     <ul>
@@ -31,17 +34,30 @@ class QuestionsIndex extends React.Component {
                                     >
                                     <div className="question-list">
                                            <div className="answer-count">
-                                               <div className="number">{question.answerIds.length}</div>
-                                               <div className="answer-body">answers</div>
+                                               <div className="number">
+                                                   {question.answerIds.length}
+                                               </div>
+                                               <div className="answer-body">
+                                                   answers
+                                               </div>
                                            </div>
-                                           <div className="question-title">{question.title}</div>
+                                           <div className="question-title">
+                                               {question.title}
+                                           </div>
                                     </div>
                                 </li>
                             ))
                         }
                     </ul>
+                  </div>
+                <div className="ask-question-button">
+                    <button className="hov askquestion" 
+                      onClick={() => this.routeChange("/questions/new")}>
+                      Ask Question
+                    </button>
                 </div>
-                <div className="ask-question-button"><button className="hov askquestion" onClick={() => this.routeChange("/questions/new")}>Ask Question</button></div>
+             </div>
+             <FooterSection />
             </div>
         )
     }

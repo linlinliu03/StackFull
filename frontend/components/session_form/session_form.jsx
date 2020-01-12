@@ -7,6 +7,11 @@ class SessionForm extends React.Component {
         this.state = this.props.user;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoSubmit = this.demoSubmit.bind(this);
+        this.routeChange = this.routeChange.bind(this)
+    }
+
+    routeChange(path) {
+        this.props.history.push(path);
     }
 
     update(field) {
@@ -39,7 +44,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const display = this.props.formType === "sign up" ? (
+        const display = this.props.formType === "Sign up" ? (
             <div className="label">
                 <label htmlFor="email">Email:</label>
                 <div>
@@ -59,7 +64,9 @@ class SessionForm extends React.Component {
         <div className="background">
                 <div className="sessionparent">
                     <div className="greeting">{this.props.formMessage}</div>
-                    <button className="demo" onClick={this.demoSubmit}>Demo User</button>
+                    <button 
+                       className="demo" onClick={this.demoSubmit}>Demo User
+                    </button>
                     <div className="formContainer">
                         <form className="form" onSubmit={this.handleSubmit}>
                             <div className="label">
@@ -86,11 +93,19 @@ class SessionForm extends React.Component {
                                         onChange={this.update('password')}
                                     />
                                 </div>
-                                <button className="multibtn" onClick={this.handleSubmit}>{this.props.formType}</button>
+                                <button className="multibtn" 
+                                        onClick={this.handleSubmit}>
+                                        {this.props.formType}
+                                </button>
 
                             </div>
                             {this.renderErrors()}
                         </form>
+                    </div>
+                    <div className="bottom-text"><span className="link-text1">
+                        {this.props.change}</span><span className="link-text2" 
+                        onClick={() => this.routeChange(this.props.Link)}>
+                        {this.props.redirect}</span>
                     </div>
                 </div>
         </div>

@@ -10,9 +10,11 @@ const mapStateToProps = (state, ownProps) => ({
         password: ""
     },
     errors: state.errors.session,
-    formType: 'login',
-    formMessage: 'Welcome Back!',
-    link: <Link to='/signup'>Sign UP Instead</Link>
+    formType: 'Log in',
+    formMessage: 'Please login!',
+    change: 'Don’t have an account?',
+    redirect: 'Sign up',
+    Link: '/signup'
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

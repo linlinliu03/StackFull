@@ -56,23 +56,38 @@ class Greeting extends React.Component {
         const { currentUser} = this.props;
         const display = currentUser ? (
             <div className="rightbar">
-                <div className="hove avatar-circle" onClick={() => this.routeChange(`/users/${currentUser.id}`)}>
-                    <span className="initials">{currentUser.username.charAt(0).toUpperCase()}</span>
+                <div className="hove avatar-circle" 
+                    onClick={() => this.routeChange(`/users/${currentUser.id}`)}>
+                    <span className="initials">
+                        {currentUser.username.charAt(0).toUpperCase()}
+                    </span>
                 </div>
-                < FontAwesomeIcon icon={faSignOutAlt} className="hove logout" onClick={this.signOut} />
+                < FontAwesomeIcon icon={faSignOutAlt} className="hove logout" 
+                    onClick={this.signOut} />
             </div>
         ) : (
                 <div className="rightbar">
-                    <button className="hove login" onClick={() => this.routeChange("/login")}>Login</button>
-                    <button className="hove signup" onClick={() => this.routeChange("/signup")}>Sign Up</button>
+                    <button className="hove login" 
+                       onClick={() => this.routeChange("/login")}>
+                       Login
+                    </button>
+                    <button className="hov signup" 
+                       onClick={() => this.routeChange("/signup")}>
+                       Sign Up
+                    </button>
                 </div>
             );
         
 
        
         return (
+            <div>
             <div className="header">
-                <div className="hove homediv" onClick={() => this.routeChange("/")}><div className="stackimage"></div><div className="text">Full</div></div>
+                <div className="hove homediv" 
+                    onClick={() => this.routeChange("/")}>
+                    <div className="stackimage"></div>
+                    <div className="text">Full</div>
+                </div>
                 <div className="searchbar">
                   <span className="glyphicon glyphicon-search"></span>
                   <input 
@@ -85,6 +100,10 @@ class Greeting extends React.Component {
                       />
                 </div>
                 {display}
+            </div>
+            <div className="spacer">
+                &nbsp;
+            </div>
             </div>
         )
     }
