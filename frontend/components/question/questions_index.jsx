@@ -23,6 +23,10 @@ class QuestionsIndex extends React.Component {
         return (
             <div>
              <div className="question-frame">
+                <div className="home-section"
+                    onClick={() => this.routeChange("/")}>
+                    <div className="home-home">Home</div>
+                </div>
                 <div className="question-section">
                     <div className="questions-top">Top Questions</div>
                     <ul>
