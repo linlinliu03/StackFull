@@ -3,7 +3,6 @@
     flex-direction:column;
     justify-content: space-between;
     align-items: center;
-    margin: 0px;
     
     
 }
@@ -75,7 +74,6 @@
 .background{
     background-color: lightgray;
     width: 100vw;
-    height: 100vh;
     margin: 0;
     padding-top: 30px;
 }
@@ -105,7 +103,8 @@
 }
 
 .bottom-text{
-    margin-top: 48px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .link-text1{

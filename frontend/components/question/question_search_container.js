@@ -6,6 +6,7 @@ import {fetchQuestions} from '../../actions/question_actions';
 const mapStateToProps = (state,ownProps) => {
     return {
     questions: Object.values(state.entities.questions),
+    currentUser: state.entities.users[state.session.id],
     query: ownProps.match.params.query, 
     url: ownProps.match.url 
 }}

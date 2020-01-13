@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import FooterSection from '../footer/footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 
 class QuestionSearch extends React.Component {
     constructor() {
@@ -13,7 +15,7 @@ class QuestionSearch extends React.Component {
     }
 
     render() {
-        const { questions, query, url } = this.props;
+        const { questions, query, url, currentUser } = this.props;
         const display = questions.length === 0 ? (
             <div className="cannt-find">
                 <img className="img-reference" 
@@ -59,10 +61,19 @@ class QuestionSearch extends React.Component {
         )
         const main= (url === '/search/' ? (
             <div className="search-outer">
-                <div className="home-section" 
-                    onClick={() => this.routeChange("/")}>
-                    <div className="home-home">Home</div>
-                </div>
+                <div className="home-section">
+                    <div className="home-home1">
+                        < FontAwesomeIcon icon={faGlobeAmericas} /> Stack Full
+                    </div>
+                    <div 
+                        onClick={() => this.routeChange("/")} 
+                        className="home-home">Home
+                    </div>
+                    <div 
+                        onClick={() => this.routeChange(`/users/${currentUser.id}`)}
+                        className="home-home">User
+                    </div>
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
                 <div className="question-search-page">
                     <div className="search-first">
                         <div className="search-results">Search Results</div>
@@ -75,14 +86,24 @@ class QuestionSearch extends React.Component {
                     </div>
                     <div className="number-results">No Result</div>
                     <div className="top-border"></div>
+                    <div className="no-result-bottom">Please type something to search!</div>
                 </div>
             </div>
         ) : (
             <div className="search-outer">
-                    <div className="home-section" 
-                       onClick={() => this.routeChange("/")}>
-                       <div className="home-home">Home</div>
+                <div className="home-section">
+                    <div className="home-home1"> 
+                        < FontAwesomeIcon icon={faGlobeAmericas}/> Stack Full
                     </div>
+                    <div
+                        onClick={() => this.routeChange("/")}
+                        className="home-home">Home
+                    </div>
+                    <div
+                        onClick={() => this.routeChange(`/users/${currentUser.id}`)}
+                        className="home-home">User
+                    </div>
+                </div> 
                 <div className="question-search-page">
                     <div className="search-first">
                         <div className="search-results">Search Results</div>

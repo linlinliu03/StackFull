@@ -1,5 +1,7 @@
 import React from 'react';
 import FooterSection from '../footer/footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 
 
 class QuestionsIndex extends React.Component {
@@ -23,12 +25,21 @@ class QuestionsIndex extends React.Component {
         return (
             <div>
              <div className="question-frame">
-                <div className="home-section"
-                    onClick={() => this.routeChange("/")}>
-                    <div className="home-home">Home</div>
+                <div className="home-section">
+                    <div className="home-home1">
+                        < FontAwesomeIcon icon={faGlobeAmericas} /> Stack Full
+                    </div>
+                    <div
+                        onClick={() => this.routeChange("/")}
+                        className="home-home">Home
+                    </div>
+                    <div
+                        onClick={() => this.routeChange(`/users/${this.props.currentUser.id}`)}
+                        className="home-home">User
+                    </div>
                 </div>
                 <div className="question-section">
-                    <div className="questions-top">Top Questions</div>
+                    <div className="questions-top">Recent Questions</div>
                     <ul>
                         {
                             recentQuestions.reverse().map(question => (
