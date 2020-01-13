@@ -10,12 +10,9 @@ class FooterSection extends React.Component{
     render(){
         return(
             <div className="footer-container">
-                {/* <div className="footer-button" 
+                <div className="footer-button" 
                     onClick={this.routeChange("/")}>
                     Home
-                </div> */}
-                <div className="footer-button">
-                    <a href="#/login">Home</a>
                 </div>
                 <div className="footer-button" 
                     onClick={this.routeChange("/questions/new")}>
