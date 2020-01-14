@@ -78,6 +78,7 @@
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
     font-size: small;
     padding: 5px;
+    outline: none;
 }
 
 .login{
@@ -90,6 +91,7 @@
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
     font-size: small;
     padding: 5px;
+    outline: none;
 }
 
 .searchbar input{ 

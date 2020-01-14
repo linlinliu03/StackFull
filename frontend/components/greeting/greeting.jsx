@@ -25,6 +25,13 @@ class Greeting extends React.Component {
         this.startSearch = this.startSearch.bind(this);
     }
 
+    componentDidUpdate(prevProps) {
+        const res = this.props.location.pathname.match("/search/(.*)")
+        if (this.props.location.pathname !== prevProps.location.pathname && !res) {
+            this.setState({ word: '' });
+        }
+    }
+
     routeChange(path) {
         this.setState({ word: '' });
         this.props.resetError();

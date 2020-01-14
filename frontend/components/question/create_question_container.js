@@ -1,4 +1,4 @@
-import QuestionForm from './quetion_form';
+import QuestionForm from './question_form';
 import { connect } from 'react-redux';
 import {createQuestion} from '../../actions/question_actions';
 
