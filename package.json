@@ -45,6 +45,7 @@
   },
   "homepage": "https://github.com/linlinliu03/StackFull#readme",
   "devDependencies": {
+    "grunt-svgstore": "^2.0.0",
     "webpack-cli": "^3.3.10"
   }
 }

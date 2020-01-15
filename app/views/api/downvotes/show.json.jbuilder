@@ -1,0 +1,1 @@
+json.extract! @downvote, :user_id, :answer_id

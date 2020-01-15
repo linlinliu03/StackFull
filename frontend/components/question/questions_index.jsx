@@ -15,7 +15,7 @@ class QuestionsIndex extends React.Component {
     }
 
     routeChange(path) {
-        this.props.history.push(path);
+        this.props.history.push(path)
     }
 
     render() {

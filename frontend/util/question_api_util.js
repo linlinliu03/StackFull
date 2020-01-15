@@ -6,12 +6,12 @@ export const fetchQuestions = query => (
     })
 )
 
-export const fetchQuestion = questionId => (
-    $.ajax({
+export const fetchQuestion = questionId => {
+    return $.ajax({
         method: 'GET',
         url: `api/questions/${questionId}`
     })
-)
+}
 
 export const createQuestion = question => (
     $.ajax({

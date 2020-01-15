@@ -1,12 +1,30 @@
 import QuestionShow from './question_show';
 import { connect } from 'react-redux';
+import { fetchAnswers, createAnswer, updateAnswer} from '../../actions/answer_actions';
+import {updateQuestion} from '../../actions/question_actions';
+import {createDownvote} from '../../actions/downvote_action';
+import {createUpvote} from '../../actions/upvote_action';
+import {fetchQuestions, fetchQuestion} from '../../actions/question_actions';
+import {fetchUsers} from '../../actions/user_actions';
 
-const mapStateToProps = state => ({
-
-})
+const mapStateToProps = (state, ownProps) => {
+    return {
+    question: state.entities.questions[ownProps.match.params.questionId],
+    answers: Object.values(state.entities.answers),
+    users: state.entities.users,
+    currentUser: state.entities.users[state.session.id]
+}}
 
 const mapDispatchToProps = dispatch => ({
-
+    fetchQuestions: () => dispatch(fetchQuestions()),
+    fetchQuestion: questionId => dispatch(fetchQuestion(questionId)), 
+    fetchAnswers:questionId => dispatch(fetchAnswers(questionId)),
+    createAnswer: answer => dispatch(createAnswer(answer)),
+    updateAnswer: answer => dispatch(updateAnswer(answer)),
+    updateQuestion: question => dispatch(updateQuestion(question)),
+    createDownvote: downvote => dispatch(createDownvote(downvote)),
+    createUpvote: upvote => dispatch(createUpvote(upvote)),
+    fetchUsers: () => dispatch(fetchUsers())
 })
 
 

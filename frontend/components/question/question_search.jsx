@@ -11,7 +11,7 @@ class QuestionSearch extends React.Component {
     }
 
     routeChange(path) {
-        this.props.history.push(path);
+        this.props.history.push(path)
     }
 
     render() {
@@ -21,8 +21,7 @@ class QuestionSearch extends React.Component {
                 <img className="img-reference" 
                     src="https://cdn.sstatic.net/Img/magnifying.svg?v=f06250fb4fbb"/>
                 <div className="first-sentence">
-                    We couldn't find anything for 
-                    <span className="query-text">{query}</span>!
+                    We couldn't find anything for <span className="query-text">{query}</span>!
                 </div>
                 <div className="second-section">
                     Try different or less specific keywords.

@@ -57,9 +57,7 @@ class QuestionForm extends React.Component {
                                         id="title"
                                         className="placeholder question-create-input"
                                         type="text"
-                                        placeholder="e.g. Is there an R function 
-                                                     for finding the index of an 
-                                                     element in a vector?"
+                                        placeholder="e.g. Is there an R function for finding the index of an element in a vector?"
                                         value={this.state.title}
                                         onChange={this.update('title')}
                                     />

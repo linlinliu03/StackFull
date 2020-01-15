@@ -8,6 +8,11 @@ import {fetchQuestions,
         updateQuestion, 
         deleteQuestion}
 from "./actions/question_actions";
+// import { fetchAnswers } from "./util/answer_api_util";
+import {fetchAnswers} from "./actions/answer_actions";
+import { createDownvote } from "./actions/downvote_action";
+import { createUpvote} from "./actions/upvote_action";
+import { fetchUsers } from "./actions/user_actions";
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,6 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.createQuestion = createQuestion
     window.updateQuestion = updateQuestion
     window.deleteQuestion = deleteQuestion
+    window.fetchAnswers = fetchAnswers
+    window.createDownvote = createDownvote
+    window.createUpvote = createUpvote
+    window.fetchUsers = fetchUsers
+
     //test end 
     const root = document.getElementById("root");
     ReactDOM.render(<Root store = {store} />, root);

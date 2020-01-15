@@ -10,6 +10,9 @@ ActiveRecord::Base.transaction do
 
 User.destroy_all
 Question.destroy_all
+Answer.destroy_all
+Upvote.destroy_all
+Downvote.destroy_all
   100.times do 
     name = Faker::Name.unique.name
     email = Faker::Internet.unique.email
@@ -19,7 +22,7 @@ Question.destroy_all
 
   # Jen = User.create!({username:"Jen", email:"jen@gamil.com", password: 123456789})
   # Pan = User.create!({username:"Pan", email:"pan@gamil.com", password: 1234567890})
-  Lily = User.create!({username:"Lily", email:"lily@gamil.com", password: 1234567})
+  Tom = User.create!({username:"Tom", email:"tom@gamil.com", password: 1234567})
   # Tom = User.create!({username:"Tom", email:"tom@gmail.com", password: 12345678900})
 
   ids = User.ids
@@ -52,6 +55,36 @@ Question.destroy_all
   question25 = Question.create({user_id:ids.sample, title: "Is there a simpler syntax for member decorators for methods in Python 3?", body:"I changed a class which had a function that had to be ran prior to running a number of other functions. The function is now a decorator. But the syntax, which I came up with, seems very unintuitive."})
 
   
+  # answer1_1 = Answer.create!({user_id:ids.sample, body:"As you know ... are called Spread Attributes which the name represents it allows an expression to be expanded.", question_id: question1.id})
+  # answer1_2 = Answer.create!({user_id:ids.sample, body:"There's another use for the three dots which is known as Rest Parameters and it makes it possible to take all of the arguments to a function in as one array.", question_id: question1.id})
+  # answer1_3 = Answer.create!({user_id:ids.sample, body:"That's property spread notation. It was added in ES2018 (spread for arrays/iterables was earlier, ES2015), but it's been supported in React projects for along time via transpilation (as JSX spread attributes even though you could do it elsewhere, too, not just attributes).", question_id: question1.id})
+  # answer3_1 = Answer.create!({user_id:ids.sample, body:"I came up with this: var getByDate = function (restId, date, callback)", question_id: question3.id})
+  # answer4_1 = Answer.create!({user_id:ids.sample, body:"Don’t fall into the trap of thinking a library should prescribe how to do everything. If you want to do something with a timeout in JavaScript, you need to use setTimeout. There is no reason why Redux actions should be any different. Redux does offer some alternative ways of dealing with asynchronous stuff, but you should only use those when you realize you are repeating too much code. Unless you have this problem, use what the language offers and go for the simplest solution.", question_id: question4.id})
+  # answer4_2 = Answer.create!({user_id:ids.sample, body:"As Dan Abramov said, if you want more advanced control over your async code, you might take a look at redux-saga. This answer is a simple example, if you want better explanations on why redux-saga can be useful for your application, check this other answer.", question_id: question4.id})
+  # answer5_1 = Answer.create!({user_id:ids.sample, body:"The first thing to notice is that we're calling the api functions using the form yield call(func, ...args). call doesn't execute the effect, it just creates a plain object like {type: 'CALL', func, args}. The execution is delegated to the redux-saga middleware which takes care of executing the function and resuming the generator with its result.", question_id: question5.id})
+  # answer5_2 = Answer.create!({user_id:ids.sample, body:"I will add my experience using saga in production system in addition to the library author's rather thorough answer.", question_id: question5.id})
+  # answer6_1 = Answer.create!({user_id:ids.sample, body:"Note that containers / smart components vs. dumb components is just a good way to structure your app.", question_id: question6.id})
+  # answer6_2 = Answer.create!({user_id:ids.sample, body:"bellow image demonstrates how data flow in redux : how the data flows through Redux? Advantages of Redux are listed below:", question_id: question6.id})
+  # answer7_1 = Answer.create!({user_id:ids.sample, body:"If you’re making a SPA (Single Page Application), then you don’t have to store the data. You can use PolymerElements app-route for routing inside a SPA.", question_id: question7.id})
+  # answer9_1 = Answer.create!({user_id:ids.sample, body:"In order to make async requests with redux you should look into redux middleware, like redux-thunk, redux-observables or redux-saga", question_id: question9.id})
+  # answer10_1 = Answer.create!({user_id:ids.sample, body:"Those packages are their own opinionated integrations of the two libraries. If you agree with their opinions then they'll save you setup time, if you've already set things up and don't need them then adding them is unecessary.", question_id: question1.id})
+  # answer11_1 = Answer.create!({user_id:ids.sample, body:"You can use this.props.children to render whatever children the component contains:", question_id: question1.id})
+  # answer11_2 = Answer.create!({user_id:ids.sample, body:"Note that children is a special prop in React, and the example above is syntactic sugar and is (almost) equivalent to <Wrapper children={<App/>}/>", question_id: question1.id})
+  # answer12_1 = Answer.create!({user_id:ids.sample, body:"You have the right idea. Go with functional if your component doesn't do much more than take in some props and render. You can think of these as pure functions because they will always render and behave the same, given the same props. Also, they don't care about lifecycle methods or have their own internal state.", question_id: question1.id})
+  # answer12_2 = Answer.create!({user_id:ids.sample, body:"Always try to use stateless functions (functional components) whenever possible. There are scenarios where you'll need to use a regular React class:", question_id: question1.id})
+  # answer13_1 = Answer.create!({user_id:ids.sample, body:"You can have a try watchdog", question_id: question1.id})
+  # answer17_1 = Answer.create!({user_id:ids.sample, body:"a layout, e.g. app/view/layouts/application.html.erb (or use your preferred templating framework, I prefer haml/slim) and edit it to keep header/footer elements only (aka the repeating elements for all pages, or a set of pages)", question_id: question1.id})
+  # answer18_1 = Answer.create!({user_id:ids.sample, body:"Note, however, that the binary format used by Marshal.dump and Marshal.load is version dependent, and newer versions of Ruby are not guaranteed to be able to read marshalled objects written by older versions of Ruby.", question_id: question1.id})
+  # answer18_2 = Answer.create!({user_id:ids.sample, body:"I'd recently a problem with Rails cache during migration from Rails 3.2 to Rails 4. App was unable to read AR models from the cache (same time simpler objects like hashes, array worked well). But ruby was the same.", question_id: question1.id})
+  # answer20_1 = Answer.create!({user_id:ids.sample, body:"I would do something like this. I didnt test it but it should be close.Basically use request.session to keep track of last update.", question_id: question2.id})
+  # answer20_2 = Answer.create!({user_id:ids.sample, body:"I figured out a pretty simple way to do this. I added a field to my model which will hold a value 10 minutes from the time the user posts an update. I can then just reference that field and check if the current time is greater(later) than 10 minutes after the users last update.", question_id: question2.id})
+  # answer21_1 = Answer.create!({user_id:ids.sample, body:"And I include to in android.mk file like this", question_id: question2.id})
+  # answer22_1 = Answer.create!({user_id:ids.sample, body:"The trick is that if the compiler notices the tail recursion, it can compile a goto instead. It will generate something like the following code:", question_id: question22.id})
+  # answer22_2 = Answer.create!({user_id:ids.sample, body:"A function call is tail recursive when function call (recursive) is performed as final action. Since the current recursive instance is done executing at that point, no need to maintaining its stack frame.", question_id: question23.id})
+  # answer23_1 = Answer.create!({user_id:ids.sample, body:"You'll need to use predefined preprocessor macros for the platform you are compiling for. For example, the predefined preprocessor macros (and examples) for Microsoft Visual Studio 2019 are defined here. Similarly, you will have to search for the predefined macros for each of the platform you are looking for.", question_id: question2.id})
+  # answer24_1 = Answer.create!({user_id:ids.sample, body:"Yes, you can upload a new version that downgrades your targetSdkVersion - the Google Play target API level requirement only requires targeting API 28 or higher.", question_id: question24.id})
+  # answer25_1 = Answer.create!({user_id:ids.sample, body:"Below is a runnable example that illustrates my suggestion of how it would be possible to move the decorator function completely out of the class:", question_id: question22.id})
+
   answer1_1 = Answer.create!({user_id:ids.sample, body:"As you know ... are called Spread Attributes which the name represents it allows an expression to be expanded.", question_id:1})
   answer1_2 = Answer.create!({user_id:ids.sample, body:"There's another use for the three dots which is known as Rest Parameters and it makes it possible to take all of the arguments to a function in as one array.", question_id:1})
   answer1_3 = Answer.create!({user_id:ids.sample, body:"That's property spread notation. It was added in ES2018 (spread for arrays/iterables was earlier, ES2015), but it's been supported in React projects for along time via transpilation (as JSX spread attributes even though you could do it elsewhere, too, not just attributes).", question_id:1})
@@ -82,4 +115,27 @@ Question.destroy_all
   answer24_1 = Answer.create!({user_id:ids.sample, body:"Yes, you can upload a new version that downgrades your targetSdkVersion - the Google Play target API level requirement only requires targeting API 28 or higher.", question_id:24})
   answer25_1 = Answer.create!({user_id:ids.sample, body:"Below is a runnable example that illustrates my suggestion of how it would be possible to move the decorator function completely out of the class:", question_id:25})
 
+  ids2 = Answer.ids
+  
+
+  store1 = Hash.new { |h, k| h[k] = [] }
+  store2 = Hash.new { |h, k| h[k] = [] }
+
+  200.times do 
+    user_id = ids.sample
+    answer_id = ids2.sample
+    if !store1[answer_id].include?(user_id)
+       store1[answer_id].push(user_id)
+       Upvote.create!({user_id:user_id, answer_id:answer_id})
+    end 
+  end 
+
+  200.times do 
+    user_id = ids.sample
+    answer_id = ids2.sample
+    if !store2[answer_id].include?(user_id)
+       store2[answer_id].push(user_id)
+       Downvote.create!({user_id:user_id, answer_id:answer_id})
+    end  
+  end 
 end

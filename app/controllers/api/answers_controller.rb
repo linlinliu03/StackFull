@@ -1,6 +1,7 @@
 class Api::AnswersController < ApplicationController
     def index 
-        @answers = Answer.find_by(question_id:params[:question_id])
+        question_id = params[:questionId]
+        @answers = Answer.includes(:upvotes, :downvotes).where('answers.question_id = ?', question_id)
         render :index 
     end 
 
@@ -13,6 +14,15 @@ class Api::AnswersController < ApplicationController
             render json: @answer.errors.full_messages, status: 422  
         end
     end  
+
+    def update
+        @answer = Answer.find(params[:id])
+        if @answer.update(answer_params)
+            render :show 
+        else   
+            render json: @answer.errors.full_messages, status: 422
+        end
+    end 
 
     def destroy
         @answer = Answer.find(params[:id])

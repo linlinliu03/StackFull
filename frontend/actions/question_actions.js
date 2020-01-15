@@ -30,10 +30,13 @@ export const fetchQuestions = (query) => dispatch => (
     .then(questions => dispatch(receiveAllQuestions(questions)))
 )
 
-export const fetchQuestion = questionId => dispatch => (
-    QuestionApiUtil.fetchQuestion(questionId)
-    .then(question => dispatch(receiveQuestion(question)))
-)
+export const fetchQuestion = questionId => dispatch => {
+    return QuestionApiUtil.fetchQuestion(questionId).then(question => { 
+        return dispatch(receiveQuestion(question))
+    }).fail(err => {
+        return err; 
+    })
+}
 
 export const createQuestion = question => dispatch => (
     QuestionApiUtil.createQuestion(question)
