@@ -38,13 +38,41 @@ Stack Full, inspired by Stack Overflow, is an open community for anyone that cod
 Some codes of searching feature in the backend and frontend.
 
 ```ruby
-   def index
-        query = params[:query] || ''
-        condition = '%' + query + '%'
-        @questions = Question.includes(:answers).where('LOWER(questions.title) like LOWER(?) or
-        LOWER(questions.body) like LOWER(?)', condition, condition)
-        render :index 
-    end
+  def index
+      query = params[:query] || ''
+      condition = '%' + query + '%'
+      @questions = Question.includes(:answers).where('LOWER(questions.title) like LOWER(?) or
+      LOWER(questions.body) like LOWER(?)', condition, condition)
+      render :index 
+   end
+ ```
+ 
+ ```javascript
+ constructor(props) {
+        super(props);
+        const res = this.props.location.pathname.match("/search/(.*)")
+        if (res) {
+            const query = res[1]
+            this.state = {
+                word: query
+            }
+            this.startSearch(query)
+        } else {
+            this.state = {
+                word: ''
+            }
+        }
+        this.routeChange = this.routeChange.bind(this);
+        this.signOut = this.signOut.bind(this);
+        this.startSearch = this.startSearch.bind(this);
+    }
+
+    componentDidUpdate(prevProps) {
+        const res = this.props.location.pathname.match("/search/(.*)")
+        if (this.props.location.pathname !== prevProps.location.pathname && !res) {
+            this.setState({ word: '' });
+        }
+    }
  ```
 
 
