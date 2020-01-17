@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.createDownvote = createDownvote
     window.createUpvote = createUpvote
     window.fetchUsers = fetchUsers
-    window.deleteUpvote = deleteUpvote
+    
     //test end 
     const root = document.getElementById("root");
     ReactDOM.render(<Root store = {store} />, root);
