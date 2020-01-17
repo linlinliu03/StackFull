@@ -39,7 +39,7 @@
     margin-bottom: 40px;    
     background-color: #eff0f1;
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.26666667;
     color: #242729;
 }
@@ -127,8 +127,7 @@
 
 .answer-body-text{
     font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-    font-size: 15px;
-    line-height: 1.26666667;
+    font-size: 16px;
     color: #242729;
 }
 

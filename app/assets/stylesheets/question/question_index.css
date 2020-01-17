@@ -145,12 +145,23 @@
     width: 13%;
 }
 
-.home-home:hover{
+.home-home2:hover{
     background-color: rgba(12,13,14,0.05);
 }
 
-.home-home{
-    margin-top: 25px;
+.home-home3:hover{
+    background-color: rgba(12,13,14,0.05);
+}
+
+.home-home2{
+    margin-top: 38px;
+    padding-left: 30px;
+    cursor: pointer;
+    height: 15px;
+}
+
+.home-home3{
+    margin-top: 24px;
     padding-left: 30px;
     cursor: pointer;
     height: 15px;

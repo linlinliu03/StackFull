@@ -31,11 +31,11 @@ class QuestionsIndex extends React.Component {
                     </div>
                     <div
                         onClick={() => this.routeChange("/")}
-                        className="home-home">Home
+                        className="home-home2">Home
                     </div>
                     <div
                         onClick={() => this.routeChange(`/users/${this.props.currentUser.id}`)}
-                        className="home-home">User
+                        className="home-home3">User
                     </div>
                 </div>
                 <div className="spacer">
