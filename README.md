@@ -20,11 +20,15 @@ Stack Full, inspired by Stack Overflow, is an open community for anyone that cod
 
 * Ask Questions
   * Users can ask any coding related question and get feedback from the community.
-  * Question could be created by providing a summary title and detail body including text and code.
+  * Question could be created by providing a summary title and detailed body including optional text or code.
 * Answer Questions
   * Users can read or search all open questions to provide good answers to help others.
 * Search for Questions
   * Users have access to search question by typing keywords in the search bar without having to create an account.
-  * Search result is based on either the question title or question body including the keywords. Searching is also case         insensitive and the results are the same for both lower case and upper case of the keywords.
+  * Search result is based on either the question title or question body including the keywords. Searching is also case         insensitive, and the results will be the same for both lower-case and upper-case keywords.
+* Upvote Answer
+  * Users can upvote an answer if they realy like that solution but they can only upvote the same answer once.
+* Downvote Answer 
+  * Users can downvote an answer if they think the solution is wrong or not working but they can only downvote the same         answer once.
  
   
