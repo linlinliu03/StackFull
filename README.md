@@ -30,5 +30,6 @@ Stack Full, inspired by Stack Overflow, is an open community for anyone that cod
   * Users can upvote an answer if they realy like that solution but they can only upvote the same answer once.
 * Downvote Answer 
   * Users can downvote an answer if they think the solution is wrong or not working but they can only downvote the same         answer once.
- 
+
+![image](https://user-images.githubusercontent.com/53238880/72639865-718a2300-391b-11ea-9c34-faa98593d06c.png)
   
