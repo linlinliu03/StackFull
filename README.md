@@ -35,5 +35,17 @@ Stack Full, inspired by Stack Overflow, is an open community for anyone that cod
 
 ## Example Code
 
+Some codes of searching feature in the backend and frontend.
+
+```ruby
+   def index
+        query = params[:query] || ''
+        condition = '%' + query + '%'
+        @questions = Question.includes(:answers).where('LOWER(questions.title) like LOWER(?) or
+        LOWER(questions.body) like LOWER(?)', condition, condition)
+        render :index 
+    end
+ ```
+
 
   
