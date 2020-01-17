@@ -4,3 +4,8 @@ ________________________________________________________________________________
 ## Tech Stack
 
 * Javascript
+* React
+* Redux
+* Ruby
+* Rails
+* PostgreSQL
