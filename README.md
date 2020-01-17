@@ -17,3 +17,7 @@ Stack Full, inspired by Stack Overflow, is an open community for anyone that cod
 ![image](https://user-images.githubusercontent.com/53238880/72637324-e2c6d780-3915-11ea-93d0-239616688055.png)
 
 ## Features
+
+* Ask Questions
+  * Users can ask any coding related question and get feedback from the community.
+  * Question could be created by providing a summary title and detail body including text and code.
