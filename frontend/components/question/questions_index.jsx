@@ -20,8 +20,8 @@ class QuestionsIndex extends React.Component {
 
     render() {
         const { questions } = this.props;
-        const recentQuestions = questions.length > 20 ? 
-              questions.slice(questions.length - 20) : questions
+        // const recentQuestions = questions.length > 20 ? 
+        //       questions.slice(questions.length - 20) : questions
         return (
             <div>
              <div className="question-frame">
@@ -42,10 +42,10 @@ class QuestionsIndex extends React.Component {
                       
                 </div>
                 <div className="question-section">
-                    <div className="questions-top">Recent Questions</div>
+                    <div className="questions-top">All Questions</div>
                     <ul>
                         {
-                            recentQuestions.reverse().map(question => (
+                            questions.reverse().map(question => (
                                 <li key={question.id} 
                                     className="question-index-list"
                                     onClick={() => this.routeChange(`/questions/${question.id}`)}
