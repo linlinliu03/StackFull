@@ -21,3 +21,10 @@ Stack Full, inspired by Stack Overflow, is an open community for anyone that cod
 * Ask Questions
   * Users can ask any coding related question and get feedback from the community.
   * Question could be created by providing a summary title and detail body including text and code.
+* Answer Questions
+  * Users can read or search all open questions to provide good answers to help others.
+* Search for Questions
+  * Users have access to search question by typing keywords in the search bar without having to create an account.
+  * Search result is based on either the question title or question body including the keywords. Searching is also case         insensitive and the results are the same for both lower case and upper case of the keywords.
+ 
+  
