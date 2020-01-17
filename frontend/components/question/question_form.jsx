@@ -1,5 +1,7 @@
 import React from 'react';
 import FooterSection from '../footer/footer';
+import createEditor from '@cc98/react-ubb-editor'
+const Editor = createEditor()
 
 class QuestionForm extends React.Component {
     constructor(props) {
@@ -9,6 +11,7 @@ class QuestionForm extends React.Component {
             body: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this)
     }
 
     update(field) {
@@ -23,12 +26,13 @@ class QuestionForm extends React.Component {
             title: "",
             body: ""
         })
+        this.props.history.push('/')
     }
 
     renderErrors1() {
         if (this.props.errors.includes("Title can't be blank")){
             return <div className="error-missing">Title is missing.</div>
-       }
+        }
     };
 
     renderErrors2() {

@@ -38,6 +38,9 @@ class QuestionsIndex extends React.Component {
                         className="home-home">User
                     </div>
                 </div>
+                <div className="spacer">
+                      
+                </div>
                 <div className="question-section">
                     <div className="questions-top">Recent Questions</div>
                     <ul>
@@ -70,6 +73,15 @@ class QuestionsIndex extends React.Component {
                       onClick={() => this.routeChange("/questions/new")}>
                       Ask Question
                     </button>
+                    <div className="ask-question-image-section">
+                        <img 
+                           className="ask-question-image"
+                           src="https://cdn.sstatic.net/Img/home/public-qa.svg?v=d82acaa7df9f"/>
+                        <div className="ask-question-middle">Public Q&A</div>
+                        <div className="ask-question-bottom">
+                            Get answers to more than 16.5 million questions and give back by sharing your knowledge with others.
+                        </div>
+                    </div>
                 </div>
              </div>
              <FooterSection />

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :upvotes
     resources :downvotes
     
+    
     resource :session, only: [:create, :destroy]
+
   end
+  
 end

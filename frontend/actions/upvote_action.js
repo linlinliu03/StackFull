@@ -4,6 +4,7 @@ import * as UpvoteApiUtil from "../util/upvote_api_util";
 export const RECEIVE_UPVOTE = "RECEIVE_UPVOTE";
 export const RECEIVE_UPVOTE_ERRORS = "RECEIVE_UPVOTE_ERRORS";
 
+
 export const receiveUpvoteErrors = errors => ({
     type: RECEIVE_UPVOTE_ERRORS,
     errors

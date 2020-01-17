@@ -1,6 +1,5 @@
 .footer-container{
-    z-index: 5050;
-    width: 100%;
+    z-index: 9999;
     width: 100%;
     margin: 0 auto;
     padding: 32px 12px 12px 12px;

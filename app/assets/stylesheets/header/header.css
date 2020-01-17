@@ -3,14 +3,14 @@
 .header{
     display: flex;
     justify-content: space-between;
-    border-top: 3px solid #f48024;
+    border-top: 3px solid #9e968f;
     border-bottom: 1px solid lightgray;
     padding: 10px;
     height: 70px;
     width: 100%;
     position: fixed;
     background-color: #fafafb;
-    z-index: 5050;
+    z-index: 9999;
 }
 
 .rightbar{

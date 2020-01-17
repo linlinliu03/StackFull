@@ -1,10 +1,11 @@
 import React from 'react';
 import FooterSection from '../footer/footer';
+import AnswerIndex from '../answer/answer_index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-// import SvgIcon from '@material-ui/core/SvgIcon';
+
 
 class QuestionShow extends React.Component {
     constructor(props) {
@@ -16,13 +17,15 @@ class QuestionShow extends React.Component {
         this.createAnswer = this.createAnswer.bind(this)
     }
 
-    update() {
-        return e => this.setState({ body: e.target.value })
+    handleChange() {
+        return e => this.setState({body: e.target.value})
     }
 
     createAnswer(){
         this.props.createAnswer({body: this.state.body,question_id:this.props.question.id})
-        .then(() => this.setState({body:""}))
+           .then(() => this.props.fetchAnswers(this.props.match.params.questionId))
+           .then(() => this.setState({ body: "" }))
+
     }
 
     routeChange(path) {
@@ -36,7 +39,8 @@ class QuestionShow extends React.Component {
     }
 
     render() {
-        const {question, answers, users, currentUser, createUpvote, createDownvote} = this.props;
+        
+        const {question, answers, users, currentUser, createUpvote, createDownvote, fetchAnswers} = this.props;
         const images = [
                          "https://i.stack.imgur.com/hMDvl.jpg?s=96&g=1",
                          "https://i.stack.imgur.com/tGgv6.jpg?s=96&g=1",
@@ -70,7 +74,10 @@ class QuestionShow extends React.Component {
                             onClick={() => this.routeChange(`/users/${currentUser.id}`)}
                             className="home-home">User
                         </div>
-                    </div>  
+                    </div> 
+                    <div className="spacer">
+                        
+                    </div> 
                     <div className="question-show-section">
                         <div className="question-show-question">
                             <div className="question-show-title">{question && question.title}</div>
@@ -91,41 +98,31 @@ class QuestionShow extends React.Component {
                             <ul>
                                 {
                                     answers && answers.map(answer => (
-                                        <li key={answer.id}
-                                            className="question-answers-list">
-                                                <div className="question-answer-top">
-                                                    <div className="answer-votes">
-                                                        < FontAwesomeIcon icon={faCaretUp} className="icon-vote"
-                                                           onClick={() => createUpvote({answer_id:answer.id})} />
-                                                        {/* <svg aria-hidden="true" class="svg-icon m0 iconArrowUpLg"  viewBox="0 0 36 36"><path d="M2 26h32L18 10 2 26z"></path></svg> */}
-                                                        <div>{answer.upvoteIds.length - answer.downvoteIds.length}</div>
-                                                        < FontAwesomeIcon icon={faCaretDown} className="icon-vote"
-                                                           onClick={() => createDownvote({ answer_id: answer.id })} />
-                                                        {/* <svg aria-hidden="true" class="svg-icon m0 iconArrowDownLg"  viewBox="0 0 36 36"><path d="M2 10h32L18 26 2 10z"></path></svg> */}
-                                                    </div>
-                                                    <div className="answer-body-tex">{answer.body}</div>
-                                                </div>
-                                                <div className="question-show-answer-bottom">
-                                                    <div className="question-show-answer-bottom-inside">
-                                                        <img className="question-show-body-bottom-image"
-                                                            src={`${images[answer && answer.userId % images.length]}`} />
-                                                        <div className="question-show-body-bottom-text">
-                                                            {users[answer.userId].username}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                        </li>
+                                        <AnswerIndex
+                                           key = {answer.id}
+                                           answer = {answer}
+                                           users = {users}
+                                           fetchAnswers = {fetchAnswers}
+                                           question = {question}
+                                           createUpvote = {createUpvote}
+                                           createDownvote = {createDownvote}
+                                           images = {images}
+                                        />
                                     ))
                                 }
                             </ul>
                         </div>
                         <div className="question-show-create-answer">
-                            <label>Your Answer</label>  
-                            <textarea 
-                                value={this.state.body}
-                                onChange={this.update()}
+                            <label className="your-answer-text">Your Answer</label> 
+                            <textarea
+                                className = "answer-input"
+                                value={this.state.body} 
+                                onChange={this.handleChange()}
                             />
-                            <button onClick={() => this.createAnswer()}>Post your answer</button>
+                            <button className="post-answer-btn" 
+                                onClick={() => this.createAnswer()}>
+                                Post Your Answer
+                            </button>
                         </div>
                     </div>
                     <div className="ask-question-button">
@@ -133,6 +130,15 @@ class QuestionShow extends React.Component {
                             onClick={() => this.routeChange("/questions/new")}>
                             Ask Question
                         </button>
+                        <div className="ask-question-image-section">
+                            <img
+                                className="ask-question-image"
+                                src="https://cdn.sstatic.net/Img/home/public-qa.svg?v=d82acaa7df9f" />
+                            <div className="ask-question-middle">Public Q&A</div>
+                            <div className="ask-question-bottom">
+                                Get answers to more than 16.5 million questions and give back by sharing your knowledge with others.
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <FooterSection />

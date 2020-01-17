@@ -72,12 +72,15 @@ class QuestionSearch extends React.Component {
                         onClick={() => this.routeChange(`/users/${currentUser.id}`)}
                         className="home-home">User
                     </div>
-                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                </div>   
+                <div className="spacer">
+
+                </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
                 <div className="question-search-page">
                     <div className="search-first">
                         <div className="search-results">Search Results</div>
-                        <div className="ask-question-button">
-                            <button className="hov askquestion" 
+                        <div className="ask-question-button-search">
+                            <button className="hov askquestion-search" 
                                onClick={() => this.routeChange("/questions/new")}>
                                Ask Question
                             </button>
@@ -103,11 +106,14 @@ class QuestionSearch extends React.Component {
                         className="home-home">User
                     </div>
                 </div> 
+                <div className="spacer">
+                       
+                </div>
                 <div className="question-search-page">
                     <div className="search-first">
                         <div className="search-results">Search Results</div>
-                        <div className="ask-question-button">
-                            <button className="hov askquestion" 
+                        <div className="ask-question-button-search">
+                            <button className="hov askquestion-search" 
                                onClick={() => this.routeChange("/questions/new")}>
                                Ask Question
                             </button>

@@ -5,3 +5,4 @@ export const createDownvote = downvote => (
         data: { downvote }
     })
 )
+
