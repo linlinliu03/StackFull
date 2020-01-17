@@ -13,7 +13,7 @@ import { fetchAnswers } from "./util/answer_api_util";
 import { createDownvote } from "./actions/downvote_action";
 import { createUpvote} from "./actions/upvote_action";
 import { fetchUsers } from "./actions/user_actions";
-import { deleteUpvote } from "./util/upvote_api_util";
+
 
 
 
