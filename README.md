@@ -75,13 +75,5 @@ def index
     }
  ```
 
-## Future Features
-
-Features that I'd like to include in the future are as follows:
-
-* Create user profile page to include answers provided and questions the user asked
-* Create upvote and downvote for questions
-* Improve upvote and downvote for answers so that if the user upvote or downvote the same answer again, an error notice will   pop up
-* Delete and update function for both questions and answers if the author is current user
 
   
