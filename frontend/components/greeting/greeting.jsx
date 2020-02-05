@@ -48,8 +48,8 @@ class Greeting extends React.Component {
     }
 
     startSearch(query) {
-        this.props.fetchQuestions(query);
-        return this.props.history.push(`/search/${query}`)
+        this.props.fetchQuestions(query)
+            .then(() => this.props.history.push(`/search/${query}`))
     }
     searchFunc(){
         return e => {

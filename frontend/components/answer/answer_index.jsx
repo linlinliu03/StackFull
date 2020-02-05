@@ -2,6 +2,8 @@ import React from 'react';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ReactQuill from "react-quill";
+
 
 
 class AnswerIndex extends React.Component{
@@ -40,6 +42,13 @@ class AnswerIndex extends React.Component{
                         < FontAwesomeIcon icon={faCaretDown} className="icon-downvote icon-vote"
                             onClick={() => this.updateDownvote()} />
                     </div>
+                    {/* <ReactQuill
+                        value={answer.body}
+                        modules={{
+                            toolbar: false
+                        }}
+                        readOnly={true}
+                    /> */}
                     <div className="answer-body-tex">{answer.body}</div>
                 </div>
                 <div className="question-show-answer-bottom">

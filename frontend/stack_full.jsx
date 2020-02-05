@@ -13,6 +13,7 @@ import { fetchAnswers } from "./util/answer_api_util";
 import { createDownvote } from "./actions/downvote_action";
 import { createUpvote} from "./actions/upvote_action";
 import { fetchUsers } from "./actions/user_actions";
+import {createAnswer} from "./util/answer_api_util";
 
 
 
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.createDownvote = createDownvote
     window.createUpvote = createUpvote
     window.fetchUsers = fetchUsers
+    window.createAnswer = createAnswer
     
     //test end 
     const root = document.getElementById("root");

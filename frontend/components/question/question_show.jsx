@@ -5,6 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+// import 'react-quill/dist/quill.snow.css'; // ES6
+// import ReactQuill, { Quill } from "react-quill";
+// import parse from 'html-react-parser';
+
+import ReactQuill from "react-quill";
+
+
 
 
 class QuestionShow extends React.Component {
@@ -15,7 +22,48 @@ class QuestionShow extends React.Component {
         }
         this.routeChange = this.routeChange.bind(this)
         this.createAnswer = this.createAnswer.bind(this)
+        // this.updatestate = this.updatestate.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
+
+        // this.modules = {
+        //     toolbar: [
+        //         [{ font: [] }],
+        //         [{ size: ["small", false, "large", "huge"] }],
+        //         ["bold", "italic", "underline"],
+        //         [{ list: "ordered" }, { list: "bullet" }],
+        //         [{ align: [] }],
+        //         [{ color: [] }, { background: [] }],
+        //         ["clean"]
+        //     ]
+        // };
+        // this.formats = [
+        //     "font",
+        //     "size",
+        //     "bold",
+        //     "italic",
+        //     "underline",
+        //     "list",
+        //     "bullet",
+        //     "align",
+        //     "color",
+        //     "background"
+        // ];
     }
+
+    // updatestate(value){
+    //     this.setState({
+    //         body: value
+    //     })
+    // }
+
+
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     String.fromCharCode(179);
+    //     this.props.createAnswer({ body: this.state.body, question_id: this.props.question.id })
+    //         .then(() => this.props.fetchAnswers(this.props.match.params.questionId))
+    //         .then(() => this.setState({ body: "" }))
+    // }
 
     handleChange() {
         return e => this.setState({body: e.target.value})
@@ -28,15 +76,21 @@ class QuestionShow extends React.Component {
 
     }
 
+
     routeChange(path) {
         this.props.history.push(path)
     }
 
     componentDidMount(){
+        // this.props.fetchUsers()
+        // this.props.fetchQuestion(this.props.match.params.questionId)
+        // this.props.fetchAnswers(this.props.match.params.questionId)
         this.props.fetchUsers()
             .then(() => this.props.fetchQuestion(this.props.match.params.questionId))
             .then(() => this.props.fetchAnswers(this.props.match.params.questionId));
     }
+
+
 
     render() {
         
@@ -113,7 +167,21 @@ class QuestionShow extends React.Component {
                             </ul>
                         </div>
                         <div className="question-show-create-answer">
-                            <label className="your-answer-text">Your Answer</label> 
+                            {/* <form onSubmit={this.handleSubmit}> */}
+                                <label className="your-answer-text">Your Answer</label> 
+                                {/* <ReactQuill
+                                    theme = "snow"
+                                    modules={this.modules}
+                                    formats={this.formats}
+                                    value={this.state.body || ''}
+                                    onChange={this.updatestate}
+                                />
+                                <button 
+                                    className="post-answer-btn"
+                                    type="submit">
+                                    Post Your Answer
+                                </button>
+                            </form> */}
                             <textarea
                                 className = "answer-input"
                                 value={this.state.body} 
