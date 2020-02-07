@@ -9,7 +9,7 @@ class UserShow extends React.Component {
 
     render(){
         return(
-            <div>User Page Coming Soon!</div>
+            <div>User Page</div>
         )
     }
 }
