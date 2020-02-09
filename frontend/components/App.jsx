@@ -19,7 +19,7 @@ import Home from "../components/home/home";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
-  <div>
+  <div className="outerouter">
       <header>
       <GreetingContainer />
       </header>
