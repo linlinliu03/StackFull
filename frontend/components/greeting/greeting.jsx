@@ -64,8 +64,10 @@ class Greeting extends React.Component {
         const display = currentUser ? (
             <div className="rightbar">
                 {/* <div className="hove avatar-circle"  */}
-                <div className="hove initials" 
-                    onClick={() => this.routeChange(`/users/${currentUser.id}`)}>
+                <div 
+                    // className="hove initials" 
+                    // onClick={() => this.routeChange(`/users/${currentUser.id}`)}
+                >
                     {/* <span className="initials"> */}
                         {/* {currentUser.username.charAt(0).toUpperCase()} */}
                         <img className="userimage"
