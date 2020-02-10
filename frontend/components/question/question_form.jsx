@@ -21,12 +21,13 @@ class QuestionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const question = Object.assign({}, this.state);
-        this.props.createQuestion(question);
-        this.setState({ 
-            title: "",
-            body: ""
-        })
-        this.props.history.push('/')
+        this.props.createQuestion(question)
+            .then(() => this.setState({
+                title: "",
+                body: ""
+            }))
+            .then(() => this.props.resetError())
+            .then(() => this.props.history.push('/'))
     }
 
     renderErrors1() {
