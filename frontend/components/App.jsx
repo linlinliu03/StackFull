@@ -18,8 +18,10 @@ import QuestionSearchContainer from "../components/question/question_search_cont
 import Home from "../components/home/home";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
-const App = () => (
-  <div className="outerouter">
+const App = () => {
+  // document.body.style.zoom = "100%";
+  return(
+  <div className="outerouter">  
       <header>
       <GreetingContainer />
       </header>
@@ -35,6 +37,6 @@ const App = () => (
         <AuthRoute exact path="/" component={Home} />
       </Switch>
   </div>
-);
+  )};
 
 export default App;

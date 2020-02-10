@@ -19,6 +19,7 @@ import {createAnswer} from "./util/answer_api_util";
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    
     let store;
     if (window.currentUser) {
         const preloadedState = {

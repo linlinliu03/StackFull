@@ -9,7 +9,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 // import ReactQuill, { Quill } from "react-quill";
 // import parse from 'html-react-parser';
 
-import ReactQuill from "react-quill";
+// import ReactQuill from "react-quill";
 
 
 
