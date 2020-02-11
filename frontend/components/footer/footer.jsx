@@ -14,6 +14,15 @@ class FooterSection extends React.Component{
                     onClick={this.routeChange("/")}>
                     Home
                 </div>
+        
+                <a className="footer-button" href="https://github.com/linlinliu03/BayAreaTechnologies">
+                    Github
+                </a>
+
+                <a className="footer-button" href="https://www.linkedin.com/in/linda-liu-b700261a1/">
+                   Linkedin
+                </a>
+    
                 <div className="footer-button" 
                     onClick={this.routeChange("/questions/new")}>
                     Ask Question
