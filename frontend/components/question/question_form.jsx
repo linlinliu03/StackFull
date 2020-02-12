@@ -42,6 +42,10 @@ class QuestionForm extends React.Component {
         }
     };
 
+    componentWillUnmount() {
+        this.props.resetError()
+    }
+
     render() {
         return (
             <div className="question-form-whole">

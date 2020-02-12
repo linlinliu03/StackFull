@@ -34,7 +34,6 @@ class Greeting extends React.Component {
 
     routeChange(path) {
         this.setState({ word: '' });
-        this.props.resetError();
         this.props.history.push(path);
     }
 

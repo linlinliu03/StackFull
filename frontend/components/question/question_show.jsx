@@ -20,8 +20,8 @@ class QuestionShow extends React.Component {
         this.state = {
             body:''
         }
-        this.routeChange = this.routeChange.bind(this)
-        this.createAnswer = this.createAnswer.bind(this)
+        this.routeChange = this.routeChange.bind(this);
+        this.createAnswer = this.createAnswer.bind(this);
         // this.updatestate = this.updatestate.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -81,6 +81,10 @@ class QuestionShow extends React.Component {
         this.props.history.push(path)
     }
 
+    componentWillUnmount() {
+        this.props.resetError()
+    }
+
     componentDidMount(){
         // this.props.fetchUsers()
         // this.props.fetchQuestion(this.props.match.params.questionId)
@@ -90,11 +94,24 @@ class QuestionShow extends React.Component {
             .then(() => this.props.fetchAnswers(this.props.match.params.questionId));
     }
 
+    renderError() {
+       if (this.props.errors.length > 0) {
+           return <div className="error-missing">Can't post blank answer.</div>
+        }
+    }
+
 
 
     render() {
         
-        const {question, answers, users, currentUser, createUpvote, createDownvote, fetchAnswers} = this.props;
+        const {
+               question, 
+               answers, 
+               users, 
+               currentUser, 
+               createUpvote, 
+               createDownvote, 
+               fetchAnswers} = this.props;
         const images = [
                          "https://i.stack.imgur.com/hMDvl.jpg?s=96&g=1",
                          "https://i.stack.imgur.com/tGgv6.jpg?s=96&g=1",
@@ -187,10 +204,12 @@ class QuestionShow extends React.Component {
                                 value={this.state.body} 
                                 onChange={this.handleChange()}
                             />
+                            {this.renderError()}
                             <button className="post-answer-btn" 
                                 onClick={() => this.createAnswer()}>
                                 Post Your Answer
                             </button>
+                            
                         </div>
                     </div>
                     <div className="ask-question-button">
