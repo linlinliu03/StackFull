@@ -5,9 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-// import 'react-quill/dist/quill.snow.css'; // ES6
-// import ReactQuill, { Quill } from "react-quill";
-// import parse from 'html-react-parser';
+
 
 // import ReactQuill from "react-quill";
 
