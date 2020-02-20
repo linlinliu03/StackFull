@@ -21,12 +21,14 @@ class AnswerIndex extends React.Component{
         this.props.createUpvote({ answer_id: this.props.answer.id })
            .then(() => this.props.fetchAnswers(this.props.question.id))
            .then(() => this.setState({upvote: this.props.answer.upvoteIds.length}))
+           .fail(err => alert("You have already upvoted this answer"))
     }
 
     updateDownvote(){
         this.props.createDownvote({ answer_id: this.props.answer.id })
            .then(() => this.props.fetchAnswers(this.props.question.id))
            .then(() => this.setState({downvote: this.props.answer.downvoteIds.length}))
+           .fail(err => alert("You have already downvoted this answer"))
     }
 
     render(){
