@@ -14,8 +14,6 @@ ________________________________________________________________________________
 
 Stack Full, inspired by Stack Overflow, is an open community for anyone that codes to learn, share their knowledge, and ask questions. Stack Full can be used as a great resource for your programming project by providing high level or advanced technical solutions. You can also ask any coding related question or answer questions to help others.
 
-This project is not completed yet and I will come back later.
-
 ## Features
 
 * Ask Questions
@@ -76,4 +74,4 @@ def index
  ```
 
 
-  
+  I might add more features in the future!
