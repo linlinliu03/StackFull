@@ -4,7 +4,7 @@ import { fetchAnswers, createAnswer, updateAnswer} from '../../actions/answer_ac
 import {updateQuestion} from '../../actions/question_actions';
 import {createDownvote} from '../../actions/downvote_action';
 import {createUpvote} from '../../actions/upvote_action';
-import {fetchQuestions, fetchQuestion} from '../../actions/question_actions';
+import { fetchQuestions, fetchQuestion, deleteQuestion} from '../../actions/question_actions';
 import {fetchUsers} from '../../actions/user_actions';
 import { clearErrors } from '../../actions/session_actions';
 
@@ -21,6 +21,7 @@ const mapDispatchToProps = dispatch => ({
     fetchQuestions: () => dispatch(fetchQuestions()),
     fetchQuestion: questionId => dispatch(fetchQuestion(questionId)), 
     fetchAnswers:questionId => dispatch(fetchAnswers(questionId)),
+    deleteQuestion: questionId => dispatch(deleteQuestion(questionId)),
     createAnswer: answer => dispatch(createAnswer(answer)),
     updateAnswer: answer => dispatch(updateAnswer(answer)),
     updateQuestion: question => dispatch(updateQuestion(question)),

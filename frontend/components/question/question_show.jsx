@@ -109,6 +109,7 @@ class QuestionShow extends React.Component {
                currentUser, 
                createUpvote, 
                createDownvote, 
+               deleteQuestion,
                fetchAnswers} = this.props;
         const images = [
                          "https://i.stack.imgur.com/hMDvl.jpg?s=96&g=1",
