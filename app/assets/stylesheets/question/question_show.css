@@ -58,7 +58,26 @@
 }
 
 .question-show-body-bottom{
-    float: right;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-update{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 24px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 13px;
+    color: #848D95;
+}
+
+.delete{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.update{
+    cursor: pointer;
 }
 
 .question-show-body-bottom-image{

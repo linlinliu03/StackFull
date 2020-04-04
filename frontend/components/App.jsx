@@ -14,7 +14,8 @@ import CreateQuestionContainer from "../components/question/create_question_cont
 import QuestionsContainer from "../components/question/questions_container";
 import UserContainer from "../components/user/user_container";
 import QuestionShowContainer from "../components/question/question_show_container";
-import QuestionSearchContainer from "../components/question/question_search_container"
+import QuestionSearchContainer from "../components/question/question_search_container";
+import QuestionEditContainer from "../components/question/question_edit_container";
 import Home from "../components/home/home";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
@@ -30,6 +31,7 @@ const App = () => {
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <ProtectedRoute exact path="/questions" component={QuestionsContainer} />
         <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} />
+        <ProtectedRoute exact path="/:questionId/edit" component={QuestionEditContainer} />
         <Route exact path="/users/:userId" component={UserContainer} />
         <Route path="/search/:query" component={QuestionSearchContainer}  />
         <Route path="/search/" component={QuestionSearchContainer} />
