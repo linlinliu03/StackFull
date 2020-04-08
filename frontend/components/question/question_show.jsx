@@ -18,8 +18,9 @@ class QuestionShow extends React.Component {
         this.state = {
             body:''
         }
-        this.routeChange = this.routeChange.bind(this);
+    
         this.createAnswer = this.createAnswer.bind(this);
+        this.deleteQuestion = this.deleteQuestion.bind(this);
         // this.updatestate = this.updatestate.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -74,9 +75,27 @@ class QuestionShow extends React.Component {
 
     }
 
+    deleteQuestion(){
+        if(this.props.currentUser&&this.props.currentUser.id === this.props.question.userId){
+            this.props.deleteQuestion(this.props.question.id)
+                .then(() => this.props.history.push('/'))
+        }else{
+            window.alert("Sorry, you don't have the authorization to delete the question")
+        }
+        
+    }
+
 
     routeChange(path) {
         this.props.history.push(path)
+    }
+
+    routeToEdit(path){
+        if (this.props.currentUser && this.props.currentUser.id === this.props.question.userId) {
+            this.props.history.push(path)
+        } else{
+            window.alert("Sorry, you don't have the authorization to edit the question")
+        }
     }
 
     componentWillUnmount() {
@@ -106,7 +125,6 @@ class QuestionShow extends React.Component {
                question, 
                answers, 
                users, 
-               currentUser, 
                createUpvote, 
                createDownvote, 
                fetchAnswers} = this.props;
@@ -139,10 +157,10 @@ class QuestionShow extends React.Component {
                             onClick={() => this.routeChange("/")}
                             className="home-home2">Home
                         </div>
-                        <div
+                        {/* <div
                             onClick={() => this.routeChange(`/users/${currentUser.id}`)}
                             className="home-home3">User
-                        </div>
+                        </div> */}
                     </div> 
                     <div className="spacer">
                         
@@ -152,6 +170,10 @@ class QuestionShow extends React.Component {
                             <div className="question-show-title">{question && question.title}</div>
                             <div className="question-show-body">{question && question.body}</div>
                             <div className="question-show-body-bottom">
+                                <div className="delete-update">
+                                   <div className="delete" onClick = {this.deleteQuestion}>delete</div>
+                                    <div className="update" onClick={() => this.routeToEdit(`/${question.id}/edit`)}>edit</div>
+                                </div>
                                 <div className="question-show-body-bottom-inside">
                                     <img className="question-show-body-bottom-image" 
                                         // src={`${images[Math.floor(Math.random() * 10)]}`}/>
@@ -204,7 +226,7 @@ class QuestionShow extends React.Component {
                             />
                             {this.renderError()}
                             <button className="post-answer-btn" 
-                                onClick={() => this.createAnswer()}>
+                                onClick={this.createAnswer}>
                                 Post Your Answer
                             </button>
                             

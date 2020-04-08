@@ -31,6 +31,10 @@ class SessionForm extends React.Component {
         this.props.login(user);
     }
 
+    componentWillUnmount(){
+        this.props.resetError();
+    }
+
     renderErrors() {
         return (
             <ul>
