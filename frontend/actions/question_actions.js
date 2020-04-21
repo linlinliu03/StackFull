@@ -25,7 +25,7 @@ export const removeQuestion = questionId => ({
     questionId
 })
 
-export const fetchQuestions = (query) => dispatch => (
+export const fetchQuestions = query => dispatch => (
     QuestionApiUtil.fetchQuestions(query)
     .then(questions => dispatch(receiveAllQuestions(questions)))
 )
