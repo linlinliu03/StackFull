@@ -7,7 +7,6 @@ class SessionForm extends React.Component {
         this.state = this.props.user;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoSubmit = this.demoSubmit.bind(this);
-        this.routeChange = this.routeChange.bind(this)
     }
 
     routeChange(path) {
