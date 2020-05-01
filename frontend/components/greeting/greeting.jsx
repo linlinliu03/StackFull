@@ -20,7 +20,6 @@ class Greeting extends React.Component {
                 word: ''
             }
         }
-        this.routeChange = this.routeChange.bind(this);
         this.signOut = this.signOut.bind(this);
         this.startSearch = this.startSearch.bind(this);
     }
@@ -33,12 +32,10 @@ class Greeting extends React.Component {
     }
 
     routeChange(path) {
-        this.setState({ word: '' });
         this.props.history.push(path);
     }
 
     signOut() {
-        this.setState({word:''});
         this.props.logout().then(() => this.routeChange("/"));
     }
 

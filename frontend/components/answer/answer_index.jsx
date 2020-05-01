@@ -17,6 +17,7 @@ class AnswerIndex extends React.Component{
         this.updateDownvote = this.updateDownvote.bind(this);
     }
 
+
     updateUpvote(){
         this.props.createUpvote({ answer_id: this.props.answer.id })
            .then(() => this.props.fetchAnswers(this.props.question.id))
@@ -32,7 +33,7 @@ class AnswerIndex extends React.Component{
     }
 
     render(){
-        const { answer, users, images } = this.props;
+        const { users, answer, images } = this.props;
         return (
             <li
                 className="question-answers-list">
