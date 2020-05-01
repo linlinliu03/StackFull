@@ -8,13 +8,16 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 class Greeting extends React.Component {
     constructor(props) {
         super(props);
+        // check if there is any searching keyword in the route
         const res = this.props.location.pathname.match("/search/(.*)")
+        // if keyword exists, set the state to the searching keyword 
         if (res) {
             const query = res[1]
             this.state = {
                 word: query
             }
             this.startSearch(query)
+        // if keyword doesn't exist, set the state to be empty
         } else {
             this.state = {
                 word: ''
@@ -23,7 +26,8 @@ class Greeting extends React.Component {
         this.signOut = this.signOut.bind(this);
         this.startSearch = this.startSearch.bind(this);
     }
-
+    
+    // if redirect to other page, clear the search bar by setting state to be empty
     componentDidUpdate(prevProps) {
         const res = this.props.location.pathname.match("/search/(.*)")
         if (this.props.location.pathname !== prevProps.location.pathname && !res) {
@@ -44,11 +48,14 @@ class Greeting extends React.Component {
     }
 
     startSearch(query) {
+    // fetch all related questions based on the searching keyword and save to the redux store
         this.props.fetchQuestions(query)
+    // After getting all questions, direct to the corresponding search page
             .then(() => this.props.history.push(`/search/${query}`))
     }
     searchFunc(){
         return e => {
+    // start to search when hit the enter key
             if (e.key === 'Enter') {
                 this.startSearch(e.target.value)
             }

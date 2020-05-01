@@ -1,7 +1,10 @@
 class Api::QuestionsController < ApplicationController
     def index
+        # get the query keywords from the url
         query = params[:query] || ''
+        # format to use for SQL wildcard 
         condition = '%' + query + '%'
+        # SQL injection and make it case insensive
         @questions = Question.includes(:answers).where('LOWER(questions.title) like LOWER(?) or
         LOWER(questions.body) like LOWER(?)', condition, condition)
         render :index 
