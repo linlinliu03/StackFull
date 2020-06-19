@@ -19,6 +19,9 @@ import QuestionEditContainer from "../components/question/question_edit_containe
 import Home from "../components/home/home";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
+
+
+
 const App = () => {
   // document.body.style.zoom = "100%";
   return(
@@ -33,7 +36,7 @@ const App = () => {
         <ProtectedRoute exact path="/questions/new" component={CreateQuestionContainer} />
         <ProtectedRoute exact path="/:questionId/edit" component={QuestionEditContainer} />
         <Route exact path="/users/:userId" component={UserContainer} />
-        <Route path="/search/:query" component={QuestionSearchContainer}  />
+        <Route path="/search/:query" component={QuestionSearchContainer}/>
         <Route path="/search/" component={QuestionSearchContainer} />
         <Route exact path="/questions/:questionId" component={QuestionShowContainer} />
         <AuthRoute exact path="/" component={Home} />

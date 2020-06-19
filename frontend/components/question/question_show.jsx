@@ -112,7 +112,7 @@ class QuestionShow extends React.Component {
     }
 
     renderError() {
-       if (this.props.errors.length > 0) {
+       if (this.props.errors.includes("Body can't be blan")) {
            return <div className="error-missing">Can't post blank answer.</div>
         }
     }
