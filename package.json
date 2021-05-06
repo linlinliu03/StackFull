@@ -17,7 +17,7 @@
     "nib-core": "^2.5.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-draft-wysiwyg": "^1.14.4",
+    "react-draft-wysiwyg": "^1.14.6",
     "react-quill": "^1.3.3",
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
